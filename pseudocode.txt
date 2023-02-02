@@ -1,0 +1,59 @@
+main() {
+  Game game = initGame();
+
+  runGame(game);
+
+  cleanGame(&game);
+}
+
+// board.h
+
+struct board {
+  int width;
+  int height;
+  int *hits;
+  Boat boats[];
+} Board;
+
+// game.h
+
+struct game {
+  enum { PLAYER_1, PLAYER_2, GAME_OVER, WELCOME_SCREEN }
+  Board boardP1, boardP2;
+} Game;
+
+// game.c
+
+initGame {
+  Game game = {};
+}
+
+run(Game game) {
+  while(game.state != GAME_OVER) {
+    if (game.state == PLAYER_1) {}
+
+    render(game);
+  }
+}
+
+// render.c
+
+render(Game game) {
+  switch (game.state) {
+    case WELCOME_SCREEN:
+      renderWelcomeScreen();
+    break;
+    case GAME_OVER:
+      renderGamerOver();
+      break;
+    case PLAYER_1:
+      renderBoard(game.boardP1);
+      break;
+    // ...
+    break;
+  }
+}
+
+renderWelcomeScreen() {
+  // SDL Stuff
+}
