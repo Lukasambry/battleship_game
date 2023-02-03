@@ -13,7 +13,7 @@ render(Game game) {
       renderBoard(game.boardP1);
         break;
     case PLAYER_2:
-     renderBoard(game.boradP2);
+     renderBoard(game.boardP2);
         break;
   }
 }
